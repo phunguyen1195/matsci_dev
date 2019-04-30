@@ -1,0 +1,182 @@
+
+Current Graphics Settings: Online Display  >> on ; DISPLAY   CODE = X11    
+===(See HELP GRAPHICS)===: Meta File       >> off; META FILE  CODE = PS     
+
+:: Data from: hbond-topology-network-2017SI.cif
+
+:: Restricted CIF-File Format assumed (Automatic NOMOVE effective) 
+
+:: Data Set wj_b2_0018_Hg                                
+
+:: Saved: CALC                                                                  
+
+:: TITL wj_b2_0018_Hg    P -1                                                 
+:: LAMBDA   0.00000
+:: CELL     7.4432    9.9930   16.6480    77.550    87.540    87.090    1207.0
+:: SPGR P -1                
+
+- ADDSYM Search on ALL NON-H Chemical Types [Max NonFit 20 Perc]                                                                      
+- The  ADDSYM Search may be rerun for a choosen atom type
+- Use LIST RADII for an overview of the atom types
+
+- Number of Input Atoms Included in Search   38 (Unitcell   76)
+- Density based on Input Atom Set = 1.394 g.cm-3 - Vol / Non-H atom = 15.9 Ang+3  
+- The Structure Implies the Following Symmetry Elements Subject to the Criteria:
+- Criteria 1.00 Deg (Metric), 0.25 Ang (Rot), 0.45 Ang (Inv), 0.45 Ang (Transl)   
+
+Symm.  Input  Reduced  (Ang)        (Deg) Perc AvrDev.(Ang)          Input Cell
+Elem Cell_Row Cell_Row   d  Typ Dot Angle Fit  MaxDev.             x     y     z
+--------------------------------------------------------------------------------
+-1   ===================================  100       0  at          0     0     0
+
+         T.R.A.N.S.F.O.R.M.A.T.I.O.N  M.A.T.R.I.X for CELL and HKL DATA
+         ==============================================================
+   Reduced->Convent         Input->Reduced       T = Input->Convent:    a' = T a
+--------------------------------------------------------------------------------
+(     1     0     0 )   (     1     0     0 )   (     1     0     0 )     Det(T)
+(     0     1     0 ) X (     0     1     0 ) = (     0     1     0 )       =   
+(     0     0     1 )   (     0     0     1 )   (     0     0     1 )     1.000 
+
+Cell Lattice  a       b       c    Alpha   Beta  Gamma Volume CrystalSystem Laue
+--------------------------------------------------------------------------------
+Input   aP  7.443   9.993  16.648  77.55  87.54  87.09   1207    triclinic    -1
+Reduced  P  7.443   9.993  16.648  77.55  87.54  87.09   1207
+Convent aP  7.443   9.993  16.648  77.55  87.54  87.09   1207    triclinic    -1
+
+:: SpaceGroup = P-1         - No Obvious Spacegroup Change Needed/Suggested
+
+:: An Alternative Analysis for Missed Symmetry may be tried with 'CALC NEWSYM'.
+
+:: PSEUDO-BONDS ADDED TO: C1PA        C2PA        
+:: PSEUDO-BONDS ADDED TO: C3PA        C4PA        
+:: PSEUDO-BONDS ADDED TO: C4AA        C4A         
+:: PSEUDO-BONDS ADDED TO: C4B         C4AB        
+:: PSEUDO-BONDS ADDED TO: C5PA        C6PA        
+:: PSEUDO-BONDS ADDED TO: C1PB        C2PB        
+:: PSEUDO-BONDS ADDED TO: C3PB        C4PB        
+:: PSEUDO-BONDS ADDED TO: C5PB        C6PB        
+:: PSEUDO-BONDS ADDED TO: N2A         C2A         
+:: PSEUDO-BONDS ADDED TO: N2B         C2B         
+:: PSEUDO-BONDS ADDED TO: N7B         C7B         
+:: Resd  1, SOF 1.000, Z  2, C12 H11 N7
+:: Resd  2, SOF 1.000, Z  2, C12 H11 N7
+:: Moiety_Formula = C12 H11 N7
+:: Sum_Formula    = C12 H11 N7
+:: Formula_Weight =      253.28 [Note: Based on SHELXL2014 Atomic Weights]
+:: Formula_Z      =           4
+:: SpaceGroup_Z   =           2
+:: Formula_Z'     =       2.000
+:: mu(MoKa)       =        0.93 cm-1 =   0.093 mm-1
+:: Predicted Vol  =      1219.7[    1219.7] Ang**3, 298[298]K
+
+ ***** Weighting Mode = ATOMIC *****
+
+Resd 1          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+Resd 1          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+
+Resd 2          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+Resd 2          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+
+ ***** Weighting Mode = UNIT   *****
+
+Resd 1          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+Resd 1          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+
+Resd 2          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+Resd 2          No Molecular Symmetry Within Tolerance =  0.80 Ang.                                                                 
+
+:: Smallest angle of [RotAx] with Plane normal (  1.  0.  0.) =  3.310 Deg.
+
+:: Rotation      :    1    2  [ -1.000 -0.003  0.005]  176.67   3.703
+
+:: Create hbond-topology-network-2017SI_pl.spf                                            
+
+   X--H(I)    Res(I)   Cg(J)  [   ARU(J)]       H..Cg  Gamma
+C6PB   -H6PB   [ 2] -> Cg3    [  1554.01]   2.866(16)    3.4
+
+Donor --- H....Acceptor [    ARU  ]      D - H      H...A      D...A  D - H...A
+N2A   --H2A    ..N3B    [  1655.02]  0.887(15)  2.167(15) 3.0430(17)  169.4(16)
+N2B   --H2B    ..N3A    [  1555.01]  0.920(16)  2.161(15) 3.0682(17)  168.6(15)
+N2A   --H3A    ..N1B    [  1555.02]  0.922(15)  2.141(15) 3.0583(16)  173.1(14)
+N2B   --H3B    ..N1A    [  1455.01]  0.911(15)  2.138(15) 3.0436(16)  172.7(14)
+N4A   --H4A    ..N8A    [  1455.01]    0.92(2)    2.43(2) 3.1159(17)  131.3(15)
+N4B   --H4B    ..N8B    [  1455.02]    0.89(2)    2.46(2) 3.1131(17)  130.5(14)
+N4A   --H5A    ..N5A    [         ]  0.921(18)  2.399(15) 2.7668(16)  103.7(11)
+N4A   --H5A    ..N7A    [  1455.01]  0.921(18)  2.597(16) 3.1791(18)  121.7(12)
+N4B   --H5B    ..N5B    [         ]  0.916(18)  2.412(15) 2.7762(17)  103.7(11)
+N7A   --H6A    ..N2B    [  2767.02]  0.909(18)  2.338(17) 3.0426(17)  134.3(14)
+N7B   --H6B    ..N2A    [  2776.01]  0.889(18)  2.323(18) 3.0323(17)  136.7(14)
+N7A   --H7A    ..N8A    [  2867.01]  0.905(16)  2.146(16) 3.0474(17)  173.5(15)
+N7B   --H7B    ..N8B    [  2776.02]  0.913(16)  2.125(16) 3.0288(17)  170.1(15)
+
+C6PA  --H6PA   ..N7A    [         ]  0.974(15)  2.597(16) 3.0149(19)  106.0(11)
+C6PB  --H6PB   ..N7B    [         ]  0.973(15)  2.544(15) 2.9913(19)  108.0(11)
+
+:: Resd  0 - Infinite (Type3) 2D-Network                                        
+:: Base Vectors:     1 : [  1  0  0],     2 : [  0  1 -1],  Plane: (  0  1  1)  
+
+
+:: VOID/SOLV Gridstep (Angstrom) (re)set to 0.20, Percent Memory =  0.1
+
+van der Waals (or ion) Radii used in the Analysis
+================================================================================
+    C    H    N
+--------------------------------------------------------------------------------
+ 1.70 1.20 1.55
+:: Note: VOID/SOLV/SQUEEZE is relatively compute intense and experimental
+
+:: Total Potential Solvent Area Vol     29.7 Ang^3
+                  per Unit Cell Vol   1207.0 Ang^3 [ 2.5%]
+
+Note: Expected volumes for solvent molecules are:
+      A hydrogen bonded H2O-molecule      40 Ang^3
+      Small molecules (e.g. Toluene) 100-300 Ang^3
+
+      Values below for gridpoints and volumes in [] 
+      refer to areas where atom centers may reside.
+
+:: Use the CALC SQUEEZE instruction to calculate and optionally correct for
+:: Density identified in solvent accessible areas (Reflection data required)
+
+Area #GridPoint VolPerc.  Vol(A^3)  X(av) Y(av) Z(av) Eigenvector(frac) Sig(Ang)
+--------------------------------------------------------------------------------
+ 1   3569[    93]  2    30[   0.8]  0.500 0.500 0.500 1  1.000 0.199-0.082  1.23
+                                                      2  0.299-0.309 1.000  0.80
+                                                      3  0.371-1.000-0.006  0.65
+
+       x     y     z              Shortest Contacts within 4.5 Ang. (Excl. H)                                                       
+================================================================================
+  1  0.500 0.500 0.500            C4AB 3.14; C4B  3.14; N4B  3.31; N5B  3.32; 
+ 
+:: Note: use CALC VOID (not CALC SOLV) for Packing Index. 
+
+     Report the Distance from VOID-CG to Boundary in EV-Directions
+
+ Nr MinEV1 MaxEV1 MinEV2 MaxEV2 MinEV3 MaxEV3 MaxDist (Ang)
+================================================================================
+  1  -2.66   2.66  -1.95   1.95  -1.39   1.39   2.66
+
+Summary and Remarks : N = NOTE, W = WARNING, E = ERROR
+================================================================================
+
+W: NOMOVE option used.
+:: >>> WARNING: 'CONNECTED INPUT SET' is assumed to be TRUE
+:: >>> The Network Analysis may be INCORRECT when this  assumption is FALSE
+--------------------------------------------------------------------------------
+W: Structure contains  1 Intra H..H contacts < Sum(vdW-rad) -0.25 A (max -0.29)
+N: Number of Isotropic Non-H Atoms .......................................   38
+N: Number of Unspecified Non-H Displacement Parameters set to U = 0.05 ...   38
+N: Number of Unspecified     H Displacement Parameters set to U = 0.05 ...   22
+N: Number of modified (= # ) ATOM labels .................................   26
+N: Total Potential Solvent Accessible Void Vol  (SOLV-Map Value) ...    30 Ang^3
+
+================================================================================
+
+
+:: Input Xtal Data from File hbond-topology-network-2017SI.cif - Data Type CIF  
+
+:: NORMAL END of PLATON :    78 Pages on FILE hbond-topology-network-2017SI.lis
+
+================================================================================
+
+:: SPF File spf on :hbond-topology-network-2017SI_pl.spf

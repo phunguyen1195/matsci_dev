@@ -1,0 +1,4 @@
+#!/bin/bash
+
+platon -o
+echo "CALC ALL"
