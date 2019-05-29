@@ -46,8 +46,11 @@ for i in q:
     s = ""
     for j in i:
         if "database_code_depnum_ccdc_archive" in j:
-            s = j.split("'")[1].split(" ")[0] + "_" + j.split("'")[1].split(" ")[1]
-            # n.append(s)
+            try:
+                s = j.split("'")[1].split(" ")[0] + "_" + j.split("'")[1].split(" ")[1]
+            except Exception as e:
+                print(e)
+                print(s)
     try:
         with open(
             cifs_dir_generate + s + ".cif", "w+"
