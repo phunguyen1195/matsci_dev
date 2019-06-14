@@ -1,4 +1,4 @@
-!check.def version 190304 ===================================================
+!check.def version 190429 ===================================================
 # check.def contains the tests, error thresholds, short warning messages
 #   and text offering some explanation and advise issued by 
 #      the program PLATON when run in the 'VALIDATION' mode 
@@ -2216,6 +2216,14 @@ Possible Missing H on sp3? Phosphorus ..........  $A Check
  Check for a possibly missing Hydrogen atom on Phosphorus with sp3-like 
  geometry.  
 #=============================================================================
+# >>> Check for unclear Carbon Atom Hybridisation   
+_329    0   99   99 4 A   0 0 1 0   
+Carbon Atom Hybridisation Unclear for ..........  $A Check  
+
+ The hybridisation of this calbon atom could not be established from the
+ number of substituents and their geometry. Check for missing hydrogen atoms
+ and/or poor geometry.  
+#=============================================================================
 # >>> Check Average Phenyl C-C  
 _330 0.01 0.02 0.03 2 A   0 0 1 0   
 Large Aver Phenyl C-C Dist $A -$B. $F Ang.  
@@ -3883,6 +3891,9 @@ Percentage of I>2sig(I) Data at Theta(Max) Still$I% Note
  This ALERT Reports on whether there is still a significant level of
  observed data beyond the Theta cutoff of the Dataset. There should 
  be a good reason for a cutoff below sin(theta)/lambda = 0.6.   
+ Reflection data beyond that value should not be removed when significantly 
+ above the noise level. E.g. they may be very relevant in case of pseudo-   
+ symmetry and (non)centrosymmetry refinement.   
 #=============================================================================
 # >>> Test for missing reflections below Theta(Min) 
 _910    0   10   50 3 A   0 0 0 1   
@@ -4196,6 +4207,12 @@ Fsqd Refinement With I > n * Sigma(I) Only .....     Please Check
  Apparently, observed data with I > n * sigma(I) were used in the F**2  
  least squares refinement, rather than all observed data.   
 #=============================================================================
+# >>> Test for Poisson type Intensity Sigma Distribution
+_949    0    0    0 5 A   0 1 0 0   
+Unusual Experimental Reflection Sigma(I)'s .....     Please Check   
+
+ Check the validity of the observed reflection data.
+#=============================================================================
 # >>> Test for Reported and Calculated Hmax Difference (From CIF Data)  
 _950    0  100  200 5 I   0 0 0 1   
 Calculated (ThMax) and CIF-Reported Hmax Differ  $I Units   
@@ -4386,14 +4403,14 @@ No non-zero f" Anomalous Scattering Values Found     Please Check
 #=============================================================================
 # >>> Test the anomalous scattering factor f' values against IT 
 _982    0    0  999 1 A   0 0 0 1   
-The$A$F Deviates from  IT-value =    $BCheck
+The$A$F Deviates from  IT-value =    $B Check   
 
  Check the supplied anomalous scattering factor f' value against those  
  in the International Tables.   
 #=============================================================================
 # >>> Test the anomalous scattering factor f" values against IT 
 _983    0    0  999 1 A   0 0 0 1   
-The$A$F Deviates from  IT-Value =    $BCheck
+The$A$F Deviates from  IT-Value =    $B Check   
 
  Check the supplied anomalous scattering factor f'' value against those 
  in the International Tables.   
@@ -4453,6 +4470,12 @@ Deprecated .res/.hkl Input Style SQUEEZE Job ...          ! Note
  SQUEEZE jobs should as of the availability of SHELXL20xy be based on the   
  use of a CIF+FCF created in a SHELXL20xy refinement.   
  See A.L.Spek (2015) Acta Cryst. C71, 9-18. 
+#=============================================================================
+# >>> Report on generated hkl data  
+_991    0    0    0 5 A  0 0 0 1
+HKL data created with PLATON/generate ..........          ! Note
+
+ Warning that the reflection data are not experimental. 
 #=============================================================================
 # >>> Report Missing .bodd Include File 
 _993    0    0  999 1 A  0 0 0 1

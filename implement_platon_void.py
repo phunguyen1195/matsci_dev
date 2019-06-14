@@ -9,26 +9,28 @@ import subprocess
 import pandas as pd
 import shutil
 
+print("starting now")
+
 dir = "/home/phunguyen/dimethyl_sulfoxide_cifs/"
 
-for filepath in glob.iglob(dir + "*.cif"):
-    try:
-        cmd = "platon -o -K " + os.path.basename(filepath)
-        k = subprocess.run(
-            [cmd],
-            shell=True,
-            cwd=dir,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        k.wait()
-        print ("finished with: " + os.path.basename(filepath))
-        if k.returncode == None:
-            print("error with process")
-    except:
-        print(filepath)
-        continue
+#for filepath in glob.iglob(dir + "*.cif"):
+#    try:
+#        cmd = "platon -o -K " + os.path.basename(filepath)
+#        k = subprocess.run(
+#            [cmd],
+#            shell=True,
+#            cwd=dir,
+#            stdin=subprocess.PIPE,
+#            stdout=subprocess.PIPE,
+#            stderr=subprocess.PIPE,
+#        )
+#        k.wait()
+#        print ("finished with: " + os.path.basename(filepath))
+#        if k.returncode == None:
+#            print("error with process")
+#    except:
+#        print(filepath)
+#        continue
 
 dest = "/home/phunguyen/dimethyl_sulfoxide_cifs_lis/"
 a = []
@@ -64,7 +66,7 @@ name_solare = []
 solare = []
 for i,row in df.iterrows():
     u = row["Content"]
-    get_ux.append(u[-1])
+#    get_ux.append(u[-1])
     find_content_page = ""
     for n in u:
         if "Page - Index" in n:
@@ -142,7 +144,7 @@ for i,row in df.iterrows():
     for i in void_data:
         if solvent_area in i:
             b = i.split()
-            get_uy.append(u[-1])
+#            get_uy.append(u[-1])
 
     for j in range(0, len(b)):
         if b[j] == "Vol":
@@ -159,5 +161,5 @@ df_pkin = pd.DataFrame(list(zip(name_pkin, pkin)),
 df_solare = pd.DataFrame(list(zip(name_solare, solare)), 
                columns =['Name', 'solvent_area_number']) 
 df_pkin.to_csv("/home/phunguyen/data/dimethyl_sulfoxide_pkin.csv")
-df_solare.to_csv("/home/phunguyen/data/dimethyl_sulfoxide_pkin.csv")
+df_solare.to_csv("/home/phunguyen/data/dimethyl_sulfoxide_solare.csv")
 

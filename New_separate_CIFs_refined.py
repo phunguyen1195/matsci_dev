@@ -13,7 +13,11 @@ parser.add_argument('--cifs_dir_generate', type=str, default=None, help='Directo
 args = parser.parse_args()
 
 
+
 cif_dir = args.cif_dir
+
+print(cif_dir)
+
 with open(cif_dir) as f:
     content = f.readlines()
 
