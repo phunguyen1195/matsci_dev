@@ -1,15 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[5]:
-
+'''
+Please have python 3.6 or higher installed
+run by using command python separate_CIFs_refined.py --cif_dir ___your directory to cif___ --cifs_dir_generate ___your new location to save separated cifs___
+'''
 
 import glob
 import pandas as pd
-
-
-# In[132]:
-
 
 allcontent = []
 dic = {}
@@ -142,13 +137,8 @@ for i,row in df.iterrows():
         except ValueError:
             print("this is from formula")
 
-
-# In[133]:
-
-
 df_pkin_den = pd.DataFrame(list(zip(name_pkin, form, pkin, den)), 
                columns =['Name','Formula', 'packing_index', 'Density'])
-print(df_pkin_den)
 
 df_pkin_den.to_csv("/home/phu/Documents/dimethyl_sulfoxide_pkin_den_form.csv")
 
