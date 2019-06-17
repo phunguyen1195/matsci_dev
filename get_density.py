@@ -6,7 +6,7 @@
 
 import glob
 import pandas as pd
-
+import os
 
 # In[132]:
 
@@ -149,5 +149,5 @@ for i,row in df.iterrows():
 df_pkin_den = pd.DataFrame(list(zip(name_pkin, form, pkin, den)), 
                columns =['Name','Formula', 'packing_index', 'Density'])
 
-
+df_pkin_den.to_csv("/home/phunguyen/data/dimethyl_sulfoxide_pkin_den_form.csv")
 
