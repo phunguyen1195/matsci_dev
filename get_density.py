@@ -15,7 +15,7 @@ allcontent = []
 dic = {}
 name = []
 
-dest = "/home/phunguyen/dimethyl_sulfoxide_cifs_lis/"
+dest = "/home/phu/Documents/GitHub/matsci_dev/"
 
 for filepath in glob.iglob(dest + "*.lis"):
     content = []
@@ -148,6 +148,11 @@ for i,row in df.iterrows():
 
 df_pkin_den = pd.DataFrame(list(zip(name_pkin, form, pkin, den)), 
                columns =['Name','Formula', 'packing_index', 'Density'])
+print(df_pkin_den)
 
+<<<<<<< HEAD
 df_pkin_den.to_csv("/home/phunguyen/data/dimethyl_sulfoxide_pkin_den_form.csv")
+=======
+df_pkin_den.to_csv("/home/phu/Documents/dimethyl_sulfoxide_pkin_den_form.csv")
+>>>>>>> 2e18b4cfc224d1983e876b9e1037970a2a306000
 

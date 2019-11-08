@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[45]:
+# In[5]:
 
 
 from pymatgen import Structure
@@ -15,7 +15,7 @@ from pymatgen.analysis.structure_analyzer import get_dimensionality
 from pymatgen.analysis.structure_analyzer import get_max_bond_lengths
 from pymatgen.analysis.structure_analyzer import sulfide_type
 # from pymatgen.alchemy.filters import AbstractStructureFilter
-from pymatgen.analysis.diffraction.core import DiffractionPatternCalculator
+#from pymatgen.analysis.diffraction.core import DiffractionPatternCalculator
 from pymatgen.analysis.diffraction.neutron import NDCalculator
 from pymatgen.analysis.diffraction.xrd import XRDCalculator
 from pymatgen.symmetry.structure import SymmetrizedStructure
@@ -25,7 +25,7 @@ from pymatgen.analysis.defects.core import Vacancy
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.magnetism.analyzer import CollinearMagneticStructureAnalyzer
 from pymatgen.analysis.chemenv.coordination_environments.coordination_geometry_finder import LocalGeometryFinder
-import logging
+#import logging
 from pymatgen.ext.matproj import MPRester
 from pymatgen.analysis.chemenv.coordination_environments.chemenv_strategies import SimplestChemenvStrategy, MultiWeightsChemenvStrategy
 from pymatgen.analysis.chemenv.coordination_environments.structure_environments import LightStructureEnvironments
@@ -33,10 +33,10 @@ import glob
 import os
 import pandas as pd
 import numpy as np
-import matplotlib
+#import matplotlib
 
 
-# In[4]:
+# In[52]:
 
 
 def read_cifformat_file (directory):
@@ -48,14 +48,15 @@ def read_cifformat_file (directory):
             structure = Structure.from_file(filepath)
             lststructure.append(structure)
             lstnamefile.append(filepath)
-        except:
+        except Exception as e:
+            print (e)
             print (filepath)
             continue
     database_dict= {"namefile":lstnamefile, "structure":lststructure}
     return database_dict
 
 
-# In[4]:
+# In[7]:
 
 
 def getMultiWeightsChemenvStrategy (struct):
@@ -75,7 +76,7 @@ def getMultiWeightsChemenvStrategy (struct):
     return lse.coordination_environments
 
 
-# In[5]:
+# In[8]:
 
 
 def getSimplestChemenvStrategy (struct):
@@ -95,7 +96,7 @@ def getSimplestChemenvStrategy (struct):
     return lse.coordination_environments
 
 
-# In[6]:
+# In[9]:
 
 
 def list_getSimplestChemenvStrategy (list_struc):
@@ -109,7 +110,7 @@ def list_getSimplestChemenvStrategy (list_struc):
     return get_list
 
 
-# In[7]:
+# In[10]:
 
 
 def list_getMultiWeightsChemenvStrategy (list_struc):
@@ -123,15 +124,21 @@ def list_getMultiWeightsChemenvStrategy (list_struc):
     return get_list
 
 
-# In[8]:
+# In[11]:
 
 
 def list_oxide_type (list_struc):
-    return [ oxide_type(structure, relative_cutoff=1.2, return_nbonds=True) for structure in list_struc]
-    
+    get_list = []
+    for structure in list_struc:
+        try:
+            get_list.append(oxide_type(structure, relative_cutoff=1.2, return_nbonds=True))
+        except:
+            get_list.append("N/A")
+            continue
+    return get_list
 
 
-# In[9]:
+# In[12]:
 
 
 def list_number_of_facets_with_i_vertices (list_struc):
@@ -139,35 +146,41 @@ def list_number_of_facets_with_i_vertices (list_struc):
     
 
 
-# In[10]:
+# In[13]:
 
 
 def list_the_solid_angle_of_polygon_between_atomi_and_imagej_of_atomj (list_struc):
     return [ VoronoiConnectivity(structure,cutoff=10).connectivity_array for structure in list_struc]
 
 
-# In[11]:
+# In[14]:
 
 
 def list_Voronoi_Neighbors (list_struc):
     return [VoronoiConnectivity(structure,cutoff=10).get_connections() for structure in list_struc]
 
 
-# In[12]:
+# In[15]:
 
 
 def list_maximum_connectivity (list_struc):
     return [VoronoiConnectivity(structure,cutoff=10).max_connectivity for structure in list_struc]
 
 
-# In[13]:
+# In[16]:
 
 
 def list_contains_peroxide (list_struc):
-    return [contains_peroxide(structure, relative_cutoff=1.1) for structure in list_struc]
+    get_list = []
+    for structure in list_struc:
+        try:
+            get_list.append(contains_peroxide(structure, relative_cutoff=1.1))
+        except:
+            get_list.append("N/A")
+            continue
+    return get_list
 
-
-# In[14]:
+# In[17]:
 
 
 def list_dimensionality (list_struc):
@@ -182,14 +195,14 @@ def list_dimensionality (list_struc):
     return get_list
 
 
-# In[15]:
+# In[18]:
 
 
 def list_maximum_bond_length (list_struc):
     return [get_max_bond_lengths(structure, el_radius_updates=None) for structure in list_struc]
 
 
-# In[16]:
+# In[19]:
 
 
 def list_sulfide_type (list_struc):
@@ -203,147 +216,177 @@ def list_sulfide_type (list_struc):
     return get_list
 
 
-# In[6]:
+# In[20]:
 
 
 def list_formula (list_struc):
     return [structure.formula for structure in list_struc]
 
 
-# In[40]:
+# In[21]:
 
 
 def list_volume (list_struc):
     return [structure.volume for structure in list_struc]
 
 
-# In[35]:
+# In[22]:
 
 
 def list_density (list_struc):
-    return [structure.density for structure in list_struc]
+    get_list = []
+    for structure in list_struc:
+        try:
+            get_list.append(structure.density)
+        except:
+            get_list.append("N/A")
+            continue
+    return get_list
 
 
-# In[49]:
+# In[23]:
 
 
 def list_a (list_struc):
     return [structure.lattice.a for structure in list_struc]
 
 
-# In[50]:
+# In[24]:
 
 
 def list_b (list_struc):
     return [structure.lattice.b for structure in list_struc]
 
 
-# In[51]:
+# In[25]:
 
 
 def list_c (list_struc):
     return [structure.lattice.c for structure in list_struc]
 
 
-# In[52]:
+# In[26]:
 
 
 def list_alpha (list_struc):
     return [structure.lattice.alpha for structure in list_struc]
 
 
-# In[53]:
+# In[27]:
 
 
 def list_beta (list_struc):
     return [structure.lattice.beta for structure in list_struc]
 
 
-# In[54]:
+# In[28]:
 
 
 def list_gamma (list_struc):
     return [structure.lattice.gamma for structure in list_struc]
 
 
-# In[45]:
+# In[29]:
 
 
 def list_angles (list_struc):
     return [structure.lattice.angles for structure in list_struc]
 
 
-# In[5]:
+# In[30]:
 
 
 def list_get_crystal_system (list_struc):
-    return [SpacegroupAnalyzer(structure).get_crystal_system() for structure in list_struc]
+    get_list = []
+    for structure in list_struc:
+        try:
+            get_list.append(SpacegroupAnalyzer(structure).get_crystal_system())
+        except:
+            get_list.append("N/A")
+            continue
+    return get_list
 
-
-# In[13]:
+# In[31]:
 
 
 def list_get_hall (list_struc):
-    return [SpacegroupAnalyzer(structure).get_hall() for structure in list_struc]
+    get_list = []
+    for structure in list_struc:
+        try:
+            get_list.append(SpacegroupAnalyzer(structure).get_hall())
+        except:
+            get_list.append("N/A")
+            continue
+    return get_list
 
-
-# In[17]:
+# In[32]:
 
 
 def list_get_ir_reciprocal_mesh (list_struc):
     return [SpacegroupAnalyzer(structure).get_ir_reciprocal_mesh() for structure in list_struc]
 
 
-# In[21]:
+# In[33]:
 
 
 def list_get_lattice_type (list_struc):
-    return [SpacegroupAnalyzer(structure).get_lattice_type() for structure in list_struc]
+    get_list = []
+    for structure in list_struc:
+        try:
+            get_list.append(SpacegroupAnalyzer(structure).get_lattice_type())
+        except:
+            get_list.append("N/A")
+            continue
+    return get_list
 
-
-# In[25]:
+# In[34]:
 
 
 def list_get_space_group_number (list_struc):
-    return [SpacegroupAnalyzer(structure).get_space_group_number() for structure in list_struc]
+    get_list = []
+    for structure in list_struc:
+        try:
+            get_list.append(SpacegroupAnalyzer(structure).get_space_group_number())
+        except:
+            get_list.append("N/A")
+            continue
 
-
-# In[85]:
+# In[35]:
 
 
 def list_number_of_magnetic_sites (list_struc):
     return [CollinearMagneticStructureAnalyzer(structure).number_of_magnetic_sites for structure in list_struc]
 
 
-# In[92]:
+# In[36]:
 
 
 def list_number_of_unique_magnetic_sites (list_struc):
     return [CollinearMagneticStructureAnalyzer(structure).number_of_unique_magnetic_sites() for structure in list_struc]
 
 
-# In[100]:
+# In[37]:
 
 
 def list_types_of_magnetic_specie (list_struc):
     return [CollinearMagneticStructureAnalyzer(structure).types_of_magnetic_specie for structure in list_struc]
 
 
-# In[103]:
+# In[38]:
 
 
 def list_magmoms (list_struc):
     return [CollinearMagneticStructureAnalyzer(structure).magmoms for structure in list_struc]
 
 
-# In[109]:
+# In[39]:
 
 
 def list_ordering (list_struc):
     return [CollinearMagneticStructureAnalyzer(structure).ordering for structure in list_struc]
 
 
-# In[21]:
+# In[40]:
 
 
 def list_get_pattern (list_struc):
@@ -354,14 +397,14 @@ def list_get_pattern (list_struc):
     return ls
 
 
-# In[17]:
+# In[41]:
 
 
 def list_TransformedStructure (list_struc):
     return [TransformedStructure(structure) for structure in list_struc]
 
 
-# In[29]:
+# In[42]:
 
 
 def list_get_pattern_xrd (list_struc):
@@ -372,7 +415,7 @@ def list_get_pattern_xrd (list_struc):
     return ls
 
 
-# In[10]:
+# In[43]:
 
 
 def list_Defect (list_struc):
@@ -384,7 +427,7 @@ def list_Defect (list_struc):
 #need defect sites
 
 
-# In[30]:
+# In[73]:
 
 
 def get_dataframe_from_cifdir (directory):
@@ -392,47 +435,63 @@ def get_dataframe_from_cifdir (directory):
     get_lststruct = get_struct["structure"]
     get_namefile = get_struct["namefile"]
     dict_struct = {}
-    dict_struct
-    dict_struct["name file"] = get_namefile
-    dict_struct["formula"] = list_formula(get_lststruct)
-#     dict_struct["a"] = list_a(get_lststruct)
-#     dict_struct["b"] = list_b(get_lststruct)
-#     dict_struct["c"] = list_c(get_lststruct)
-#     dict_struct["alpha"] = list_alpha(get_lststruct)
-#     dict_struct["beta"] = list_beta(get_lststruct)
-#     dict_struct["gamma"] = list_gamma(get_lststruct)
-#     dict_struct["angles"] = list_angles(get_lststruct)
-#     dict_struct["volume"] = list_volume(get_lststruct)
-#     dict_struct["density"] = list_density(get_lststruct)
-#     dict_struct["oxide type"] = list_oxide_type(get_lststruct)
-#     dict_struct["number of facets with i vertices"] = list_number_of_facets_with_i_vertices (get_lststruct)
+    try:
+    	dict_struct["name file"] = get_namefile
+    	dict_struct["formula"] = list_formula(get_lststruct)
+    	dict_struct["a"] = list_a(get_lststruct)
+    	dict_struct["b"] = list_b(get_lststruct)
+    	dict_struct["c"] = list_c(get_lststruct)
+    	dict_struct["alpha"] = list_alpha(get_lststruct)
+    	dict_struct["beta"] = list_beta(get_lststruct)
+    	dict_struct["gamma"] = list_gamma(get_lststruct)
+    	dict_struct["angles"] = list_angles(get_lststruct)
+    	dict_struct["volume"] = list_volume(get_lststruct)
+    	dict_struct["density"] = list_density(get_lststruct)
+    	dict_struct["oxide type"] = list_oxide_type(get_lststruct)
+    	dict_struct["number of facets with i vertices"] = list_number_of_facets_with_i_vertices (get_lststruct)
 #     dict_struct["the solid angle of polygon between atomi and imagej of atomj"] = list_the_solid_angle_of_polygon_between_atomi_and_imagej_of_atomj (get_lststruct)
 #     dict_struct["Voronoi Neighbors"] = list_Voronoi_Neighbors (get_lststruct)
 #     dict_struct["maximum connectivity"] = list_maximum_connectivity (get_lststruct)
-#     dict_struct["contains peroxide"] = list_contains_peroxide (get_lststruct)
+    	dict_struct["contains peroxide"] = list_contains_peroxide (get_lststruct)
 #     #checking
-#     dict_struct["dimensionality"] = list_dimensionality (get_lststruct)
+    	dict_struct["dimensionality"] = list_dimensionality (get_lststruct)
 #     dict_struct["maximum bond length"] = list_maximum_bond_length (get_lststruct)
-#     dict_struct["sulfide type"] = list_sulfide_type (get_lststruct)
+    	dict_struct["sulfide type"] = list_sulfide_type (get_lststruct)
 #     dict_struct["MultiWeights Chemenv Strategy"] = list_getMultiWeightsChemenvStrategy (get_lststruct)
 #     dict_struct["Simplest Chemenv Strategy"] = list_getSimplestChemenvStrategy (get_lststruct)
-#     dict_struct["Crystal System"] = list_get_crystal_system(get_lststruct)
-#     dict_struct["Hall"] = list_get_hall(get_lststruct)
+    	dict_struct["Crystal System"] = list_get_crystal_system(get_lststruct)
+    	dict_struct["Hall"] = list_get_hall(get_lststruct)
 #     dict_struct["ir reciprocal mesh"] = list_get_ir_reciprocal_mesh(get_lststruct)
-#     dict_struct["lattice type"] = list_get_lattice_type(get_lststruct)
-#     dict_struct["space group number"] = list_get_space_group_number(get_lststruct)
-#     dict_struct["number of magnetic sites"] = list_number_of_magnetic_sites(get_lststruct)
-#     dict_struct["number of unique magnetic sites"] = list_number_of_unique_magnetic_sites(get_lststruct)
-#     dict_struct["types of magnetic specie"] = list_types_of_magnetic_specie(get_lststruct)
+    	dict_struct["lattice type"] = list_get_lattice_type(get_lststruct)
+    	dict_struct["space group number"] = list_get_space_group_number(get_lststruct)
+    	dict_struct["number of magnetic sites"] = list_number_of_magnetic_sites(get_lststruct)
+    	dict_struct["number of unique magnetic sites"] = list_number_of_unique_magnetic_sites(get_lststruct)
+    	dict_struct["types of magnetic specie"] = list_types_of_magnetic_specie(get_lststruct)
 #     dict_struct["magmoms"] = list_magmoms(get_lststruct)
-#     dict_struct["ordering"] = list_ordering(get_lststruct)
+    	dict_struct["ordering"] = list_ordering(get_lststruct)
+#    dict_struct["diffraction pattern"] = list_get_pattern(get_lststruct)
+#     dict_struct["AbstractStructureFilter"] = list_TransformedStructure(get_lststruct)
 #     dict_struct["diffraction pattern"] = list_get_pattern(get_lststruct)
-    dict_struct["AbstractStructureFilter"] = list_TransformedStructure(get_lststruct)
-    dict_struct["diffraction pattern"] = list_get_pattern(get_lststruct)
-    dict_struct["diffraction pattern xrd"] = list_get_pattern_xrd(get_lststruct)
+#     dict_struct["diffraction pattern xrd"] = list_get_pattern_xrd(get_lststruct)
 #     dick_struct["Defect"] = list_Defect(get_lststruct)
+    except Exception as e:
+        print (e)
+#        continue
+
     df = pd.DataFrame.from_dict(dict_struct)
     
     
     return df
+
+
+# In[74]:
+
+
+df = get_dataframe_from_cifdir ("/home/phunguyen/dimethyl_sulfoxide_cifs/")
+
+
+# In[77]:
+
+
+df.to_csv("/home/phunguyen/data/pymatgen_dimethyl_sulfoxide.csv")
 

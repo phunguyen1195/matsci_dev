@@ -1,0 +1,323 @@
+t-butyl
+vinyl
+amidinio
+ethyl
+ethynyl
+methyl
+methylene
+i-propyl
+charged amino
+uncharged aliphatic amino
+planar uncharged aromatic amino
+pyramidal uncharged aromatic amino
+azido
+aliphatic cyano
+aromatic cyano
+diazonium (aromatic)
+aliphatic dimethylamino
+planar aromatic dimethylamino
+pyramidal aromatic dimethylamino
+guanidinio
+cis hydrazino
+trans hydrazino
+imino
+aliphatic methylamino
+planar aromatic methylamino
+pyramidal aromatic methylamino
+trimethylammonio
+acetoxy
+acetyl
+charged carboxylic acid
+cis uncharged carboxylic acid
+trans uncharged carboxylic acid
+formyl
+charged aromatic hydroxy
+uncharged aliphatic hydroxy
+uncharged aromatic hydroxy
+aliphatic methoxy
+aromatic methoxy
+methoxycarbonyl
+t-butoxycarbonyl
+acetylamino
+carbamoyl
+E conformer formamido
+Z conformer formamido
+hydroxyimino
+methylcarbamoyl
+nitro
+nitroso
+semicarbazono
+C-N-C-N cis ureido
+C-N-C-N trans ureido
+trimethylsilyl
+dianionic phosphato
+major conformer monoanionic phosphato
+minor conformer monoanionic phosphato
+phosphonato
+acetylthio
+dimethylsulfonio
+methylsulfinyl
+methylsulfonato
+methylsulfonyl
+methylthio
+planar N sulfamoyl
+pyramidal N sulfamoyl
+sulfato
+sulfonato
+thio
+thiocyanato
+thiosemicarbazono
+aliphatic bromo
+aromatic bromo
+aliphatic chloro
+aromatic chloro
+dichloromethyl
+difluoromethyl
+aliphatic fluoro
+aromatic fluoro
+aliphatic iodo
+aromatic iodo
+trifluoromethyl
+anti ethane-1,2-diyl
+gauche ethane-1,2-diyl
+ethene-1,2-diyl
+aromatic ethyne-1,2-diyl
+aliphatic ethyne-1,2-diyl
+aliphatic-aliphatic methylene
+aliphatic-aromatic methylene
+aromatic-aromatic methylene
+tertiary C-H
+aliphatic-aliphatic amine, pyramidal
+planar aliphatic-aromatic amine
+pyramidal aliphatic-aromatic amine
+planar aromatic-aromatic amine
+pyramidal aromatic-aromatic amine
+charged aliphatic-aliphatic amine
+azo
+hydrazone (aromatic)
+iminomethyl
+tertiary ammonium
+carbonate
+aliphatic-aliphatic ester
+aliphatic-aromatic ester
+aromatic-aliphatic ester
+aromatic-aromatic ester
+aliphatic-aliphatic ether
+aliphatic-aromatic ether
+aromatic-aromatic ether
+aliphatic-aliphatic ketone
+aliphatic-aromatic ketone
+aromatic-aromatic ketone
+anti aliphatic oxymethylene
+gauche aliphatic oxymethylene
+anti aromatic oxymethylene
+gauche aromatic oxymethylene
+aliphatic-aliphatic amide
+aliphatic-aromatic amide
+aromatic-aliphatic amide
+aromatic-aromatic amide
+amide, N,N-disubstituted
+azoxy
+trans,cis carbamate
+trans,trans carbamate
+hydroxyimino
+cis,trans urea
+trans,trans urea
+C-O-P (i.e. any phosphorus ester link)
+P-O-P
+phosphinate
+phosphonate
+disulfide
+dithioester
+planar N sulfonamide (disubstituted)
+pyramidal N sulfonamide (disubstituted)
+sulfonamide (monosubstituted), charged
+planar N sulfonamide (monosubstituted), uncharged
+pyramidal N sulfonamide (monosubstituted), uncharged
+sulfonate
+sulfone
+major conformer sulfonylimine
+minor conformer sulfonylimine
+sulfoxide
+thioamide
+aliphatic-aliphatic thioether
+aliphatic-aromatic thioether
+aromatic-aromatic thioether
+thione
+thiourea
+phenyl
+planar N 2-aminophenyl
+pyramidal N 2-aminophenyl
+planar N 4-aminophenyl
+pyramidal N 4-aminophenyl
+2-bromophenyl
+4-bromophenyl
+2-chlorophenyl
+3-chlorophenyl
+4-chlorophenyl
+2-fluorophenyl
+4-fluorophenyl
+2-hydroxyphenyl
+3-hydroxyphenyl
+4-hydroxyphenyl
+2-methoxyphenyl
+methyl proximal to C1 3-methoxyphenyl
+methyl remote from C1 3-methoxyphenyl
+4-methoxyphenyl
+2-methylphenyl
+3-methylphenyl
+4-methylphenyl
+2-nitrophenyl
+3-nitrophenyl
+4-nitrophenyl
+2,4-dichlorophenyl
+2,4-dinitrophenyl
+3,5-dinitrophenyl
+2,4,6-trimethylphenyl
+pentafluorophenyl
+anthracene
+benzene fused to aliphatic ring
+benzene fused to aromatic ring
+benzene fused to partially reduced aromatic ring
+cyclobutane
+cyclohexyl
+cyclopropyl
+ethenyl
+indan
+aliphatic-aliphatic methylene
+aliphatic-aromatic methylene
+aromatic-aromatic methylene
+naphthalene
+acridine, charged
+acridine, uncharged
+aromatic N, all
+aromatic N, in 5-rings
+aromatic N, in 6-rings
+aromatic N-H, charged
+aromatic N-H, uncharged, in 5-rings
+aziridin-1-yl
+carbazol-9-yl
+charged imidazole
+uncharged imidazole
+imidazol-1-yl
+indole
+isoquinoline
+1-methylpyridinium
+N(ar)-CH-N(ar)
+charged piperidyl
+planar N uncharged piperidyl
+pyramidal N uncharged piperidyl
+pyrazole
+planar N pyrazolin-1-yl
+pyramidal N pyrazolin-1-yl
+pyrazol-1-yl
+pyridazine
+charged pyridine
+uncharged pyridine
+pyridinium-1-yl
+charged pyrimidine
+uncharged pyrimidine
+pyrrole
+pyrrol-1-yl
+charged quinoline
+uncharged quinoline
+tetracyanoquinodimethane
+1,3,5-triazine
+1,2,4-triazole
+1,2,4-triazol-1-yl
+anhydride in saturated rings
+anhydride in unsaturated rings
+anthraquinone
+aromatic O
+benzodioxane
+1,3-benzodioxole
+benzoquinone
+coumarin
+dibenzofuran
+dioxolan-2-one
+epoxide
+furan
+delta lactone
+gamma lactone
+phthalide
+barbituric acid
+hydantoin
+imidazolidinone
+indolin-2-one
+isoxazole
+isoxazoline
+beta lactam
+delta lactam
+gamma lactam
+planar N morpholin-4-yl
+pyramidal N morpholin-4-yl
+N-oxide (in any ring system)
+1,2,4-oxadiazole
+1,2,5-oxadiazole
+oxazole
+oxazolidinone-3-yl
+oxazoline
+phthalimidyl
+down conformer prolyl
+up conformer prolyl
+pyridine N-oxide
+pyrid-2-one
+pyrid-2-one-1-yl
+pyrid-4-one-1-yl
+pyrrolidin-2-one-1-yl
+succinimide
+aromatic S
+isothiazole
+major conformer penicillin
+minor conformer penicillin
+1,3,4-thiadiazole
+thiazole
+thiazoline
+thiirane
+thiophene
+charged adenine
+uncharged adenine
+charged cytosine
+uncharged cytosine
+guanine
+thymine
+uracil
+water
+acetic acid
+acetone
+acetonitrile
+benzene
+chloroform
+dichloromethane
+dimethylformamide
+dimethylsulfoxide
+dioxane
+methanol
+pyridine
+thiourea
+toluene
+urea
+ammonio (K)
+carbamoyl (N,Q)
+carboxylic acid (D,E), charged
+cis carboxylic acid (D,E), uncharged
+trans carboxylic acid (D,E), uncharged
+guanidinio (R)
+hydroxy (aliphatic) (S,T)
+methyl (A,I,L,T,V)
+methylthio (M)
+thio (C)
+disulfide (C)
+peptide
+4-hydroxyphenyl (Y)
+charged imidazole (H)
+uncharged imidazole (H), 4-yl
+uncharged imidazole (H), 5-yl
+indol-3-yl (W)
+phenyl (F)
+down conformer prolyl (P)
+up conformer prolyl (P)
+
+​
+
+

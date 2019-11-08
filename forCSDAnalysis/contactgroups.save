@@ -1,0 +1,54 @@
+
+uncharged C-NH2
+uncharged C-NH-C
+any uncharged N-H
+any uncharged N(sp2)-H
+any OH
+alcohol OH
+phenol OH
+any polar X-H (X= N,O or S)
+any alkyl C-H
+any aromatic C-H 
+methyl
+phenyl
+methylene
+substituted aromatic carbon
+any N-H
+any C-F
+any C-Cl
+any C-Br
+any C-I
+chloride ion
+bromide ion
+iodide ion
+CONH2
+amide N-H
+any cationic N-H
+aromatic cationic N-H
+cationic RNH3
+cationic R3NH
+planar cationic NH
+planar cationic NH2
+any cationic N-H
+carboxylate
+aliphatic ether
+linking O in esters
+aromatic O
+sulfoxide/sulfone O
+nitro
+any S
+any C=S
+aliphatic thioether  
+aromatic S
+any C,N,O,S or H atom
+water
+aromatic or sp2 N
+cyano 
+pyramidal R3N
+uncharged planar R3N
+cationic planar R3N
+any terminal O
+any C=O
+amide C=O
+ester C=O
+

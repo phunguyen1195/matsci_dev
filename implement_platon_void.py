@@ -11,28 +11,28 @@ import shutil
 
 print("starting now")
 
-dir = "/home/phunguyen/dimethyl_sulfoxide_cifs/"
+dir = "/home/phunguyen/Documents/for5analysis"
 
-#for filepath in glob.iglob(dir + "*.cif"):
-#    try:
-#        cmd = "platon -o -K " + os.path.basename(filepath)
-#        k = subprocess.run(
-#            [cmd],
-#            shell=True,
-#            cwd=dir,
-#            stdin=subprocess.PIPE,
-#            stdout=subprocess.PIPE,
-#            stderr=subprocess.PIPE,
-#        )
-#        k.wait()
-#        print ("finished with: " + os.path.basename(filepath))
-#        if k.returncode == None:
-#            print("error with process")
-#    except:
-#        print(filepath)
-#        continue
+for filepath in glob.iglob(dir + "*.cif"):
+    try:
+        cmd = "platon -o -K " + os.path.basename(filepath)
+        k = subprocess.run(
+            [cmd],
+            shell=True,
+            cwd=dir,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        k.wait()
+        print ("finished with: " + os.path.basename(filepath))
+        if k.returncode == None:
+            print("error with process")
+    except:
+        print(filepath)
+        continue
 
-dest = "/home/phunguyen/dimethyl_sulfoxide_cifs_lis/"
+dest = "/home/phunguyen/Documents/for5analysis_lis"
 a = []
 for file in os.listdir(dir):
     if file.endswith(".lis"):
